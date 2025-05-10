@@ -39,13 +39,10 @@ nav div {
     padding: 20px;
 }
 
-nav span text:hover {
-    color: blue;
-    /* Color when hovered */
-    color: blue;
-    /* Color when hovered */
+nav span:hover {
+    color: #1290DD;
     cursor: pointer;
-    /* Add pointer cursor on hover */
+    /* background-color: #1290DD; */
 }
 
 nav span {
@@ -55,10 +52,10 @@ nav span {
     text-align: center;
     font-family: "Martel Sans", sans-serif;
     font-weight: 500;
-    
+
     font-size: 16px;
     font-style: normal;
-  
+
     line-height: normal;
 }
 
@@ -124,7 +121,7 @@ nav span {
 }
 
 .flight {
-    position: absolute;   
+    position: absolute;
 }
 
 .family {
@@ -138,7 +135,7 @@ nav span {
 .image-text {
     position: relative;
     top: 10vh;
-    left: 13vw; 
+    left: 13vw;
     width: 35vw;
 
 }
@@ -166,7 +163,7 @@ nav span {
     letter-spacing: 0.4px;
 }
 
-.btn-wh{
+.btn-wh {
     background-color: #ffffff;
     color: #1290DD;
     z-index: 1;
@@ -177,5 +174,169 @@ nav span {
     font-weight: 650;
     font-size: 16px;
     letter-spacing: 3px;
-    
+
 }
+
+
+
+
+
+/* Preloader full screen */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut 1s ease-in-out forwards;
+    animation-delay: 2.5s;
+}
+
+/* Celebration text style */
+.celebration-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e67e22;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Fade out after delay */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+.main {
+    position: relative;
+    top: 44vh;
+    left: 13vw;
+    width: 654px;
+    height: 750px;
+
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.icon {
+    position:absolute;
+    z-index: 1;
+    width: 58px;
+    top:24px;
+    left: 45px;
+}
+.box1 .icon {
+    top: 31px;
+    left: 40px;
+}
+.line{
+    position: absolute;
+    z-index: 1;
+    width: 55px;
+    top: 108px;
+    left: 45px;
+}
+
+.main h3 {
+    position: absolute;
+    top: 120px;
+    left: 45px;
+    z-index: 1;
+
+    color: #000;
+
+    font-family: "Nunito Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.main p {
+    position: absolute;
+    top: 170px;
+    margin-left: 38px;
+    z-index: 1;
+    margin-right: 38px;
+
+    color: #7F8088;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.box1 h3 {
+    color: #ffffff;
+}
+
+.box1 p {
+    color: #ffffff;
+}
+
+
+
+.box {
+    position: absolute;
+    padding: 10px;
+
+}
+
+/* Positioning each box differently */
+.box1 {
+    top: 0;
+    left: 0;
+    width: 327px;
+    height: 360px;
+
+}
+
+.box2 {
+    top: 0;
+    right: 0;
+    width: 327px;
+    height: 360px;
+    margin-top: 20px;
+}
+
+.box3 {
+    bottom: 0;
+    left: 0;
+    width: 327px;
+    height: 360px;
+    margin-bottom: 30px;
+}
+
+.box4 {
+    bottom: 0;
+    right: 0;
+    width: 327px;
+    height: 360px;
+    padding-top: 0px;
+
+}
+
