@@ -18,6 +18,8 @@ nav img {
 }
 
 nav {
+    position: fixed;
+    z-index: 2;
     width: 100vw;
     height: 9vh;
     background-color: #efeeee;
@@ -84,6 +86,22 @@ nav span {
     background: #1290DD;
     border: none;
 
+
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #ffffff00;
+}
+
+.btn-wh:hover {
+    border: 1px solid #ffffff;
+    color:#ffffff;
+}
+
+.btn-blue:hover {
+    border: 1px solid #1290DD;
+    color: #1290DD;
 }
 
 .contact img {
@@ -128,7 +146,8 @@ nav span {
     position: absolute;
     top: 10.5vh;
     left: 58vw;
-    right: 40vw z-index: 1;
+    right: 40vw;
+    z-index: 1;
 
 }
 
@@ -227,7 +246,7 @@ nav span {
 }
 
 
-.main {
+.main-box {
     position: relative;
     top: 44vh;
     left: 13vw;
@@ -241,18 +260,21 @@ nav span {
     height: 100%;
     object-fit: cover;
 }
+
 .icon {
-    position:absolute;
+    position: absolute;
     z-index: 1;
     width: 58px;
-    top:24px;
+    top: 24px;
     left: 45px;
 }
+
 .box1 .icon {
     top: 31px;
     left: 40px;
 }
-.line{
+
+.line {
     position: absolute;
     z-index: 1;
     width: 55px;
@@ -260,7 +282,7 @@ nav span {
     left: 45px;
 }
 
-.main h3 {
+.main-box h3 {
     position: absolute;
     top: 120px;
     left: 45px;
@@ -275,7 +297,7 @@ nav span {
     line-height: normal;
 }
 
-.main p {
+.main-box p {
     position: absolute;
     top: 170px;
     margin-left: 38px;
@@ -337,6 +359,148 @@ nav span {
     width: 327px;
     height: 360px;
     padding-top: 0px;
-
 }
 
+.about-company {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    width: 540px;
+    height: 850px;
+    top: -44vh;
+    right: -54.5vw;
+}
+
+.about img {
+    padding-right: 5px;
+}
+
+.about {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    background-color: #FEE6E5;
+    width: max-content;
+    padding: 8px;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #1290DD;
+    letter-spacing: 3px;
+}
+
+.about-company h3 {
+    width: 523px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 51px;
+    padding-bottom: 30px;
+}
+
+.about-company h5 {
+    color: #000000;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.about-company div div h5 {
+    border-bottom: 1px solid #7F8088;
+    margin-bottom: 20px;
+}
+
+.about-company p {
+    color: #7f8088;
+    font-family: "Nunito Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 50px;
+}
+
+.about-company div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.about-company div div {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-company div span {
+    display: flex;
+}
+
+.about-company div p {
+    padding-right: 40px
+}
+
+.about-company div div span img {
+    position: relative;
+    top: -20px;
+    padding-right: 5px;
+    border-bottom: 1px solid #7F8088;
+}
+
+.about-company button {
+    position: absolute;
+    left: 0px;
+    margin-left: 0;
+}
+
+.score {
+    background-color: #ffffff;
+    display: flex;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    justify-content: space-evenly;
+    position: relative;
+    top: -300px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.score div {
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    
+}
+.score div :nth-child(1){
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 46px;
+    font-weight: bold;
+    line-height: 51px;
+    color: rgb(8, 25, 33);
+}
+.score div :nth-child(2){
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 24px;
+    color: #7f8088;
+}
+
+.section {
+    background-color: #7F8088;
+    width: 1px;
+    height: 90px;
+    justify-items: center;
+}
+
+.score div :nth-child(1) :first-child :first-child{
+    color: #1290DD; 
+    font-size: 24px;
+    position: relative;
+    top: -8px;
+    left: 6px;
+}
