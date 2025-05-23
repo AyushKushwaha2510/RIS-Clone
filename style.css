@@ -96,7 +96,7 @@ nav span {
 
 .btn-wh:hover {
     border: 1px solid #ffffff;
-    color:#ffffff;
+    color: #ffffff;
 }
 
 .btn-blue:hover {
@@ -473,16 +473,18 @@ nav span {
     justify-content: space-evenly;
     display: flex;
     flex-direction: column;
-    
+
 }
-.score div :nth-child(1){
+
+.score div :nth-child(1) {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 46px;
     font-weight: bold;
     line-height: 51px;
     color: rgb(8, 25, 33);
 }
-.score div :nth-child(2){
+
+.score div :nth-child(2) {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
     font-weight: 400px;
@@ -497,10 +499,170 @@ nav span {
     justify-items: center;
 }
 
-.score div :nth-child(1) :first-child :first-child{
-    color: #1290DD; 
+.score div :nth-child(1) :first-child :first-child {
+    color: #1290DD;
     font-size: 24px;
     position: relative;
     top: -8px;
     left: 6px;
+}
+
+
+.contact-popup {
+    position: absolute;
+    display: flex;
+    position: fixed;
+    right: 30px;
+    top: 90vh;
+    background-color: rgb(151, 111, 194);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+}
+.toggle-icon {
+  transition: transform 0.5s ease;
+}
+
+.rotate-icon {
+  transform: rotate(180deg); /* or 360deg for full rotation */
+}
+.contact-popup :nth-child(1) {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    width: 30px;
+    height: auto;
+}
+
+.contact-popup :hover {
+    cursor: pointer;
+}
+
+.contact-popup :nth-child(2) {
+    background-color: #1290DD;
+    position: absolute;
+    bottom: 0px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: bottom 0.5s ease, opacity 0.5s ease;
+}
+
+.contact-popup :nth-child(3) {
+    background-color: #e67e22;
+    position: absolute;
+    bottom: 0px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: bottom 0.5s ease, opacity 0.5s ease;
+
+}
+
+@keyframes rotateContPopup {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotateContPopup {    
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.rotateContPopup-cw{
+    animation: rotateContPopup 0.5s ease;
+}
+.rotateContPopup-acw{
+    animation: rotateContPopup 0.5s ease;
+}
+@keyframes slideUpPhoneCall {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 70px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpWhatsapp {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 140px;
+        opacity: 1;
+    }
+}
+
+.phoneCall-slideUp {
+    animation: slideUpPhoneCall 0.5s ease forwards;
+    display: block;
+    position: absolute;
+    opacity: 1;
+}
+
+.whatsapp-slideUp {
+    animation: slideUpWhatsapp 0.5s ease forwards;
+    display: block;
+    position: absolute;
+    opacity: 1;
+}
+
+@keyframes slideDownPhoneCall {
+    from {
+        bottom: 70px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes slideDownWhatsapp {
+    from {
+        bottom: 140px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+
+}
+
+.phoneCall-slideDown {
+    animation: slideDownPhoneCall 0.5s ease backwards;
+    /* display: none; */
+    position: absolute;
+    opacity: 0;
+}
+
+.whatsapp-slideDown {
+    animation: slideDownWhatsapp 0.5s ease backwards;
+    /* display: none; */
+    position: absolute;
+    opacity: 0;
+}
+
+@media (max-width: 800px) {
+    .nav {
+        background-color: #000;
+    }
 }
