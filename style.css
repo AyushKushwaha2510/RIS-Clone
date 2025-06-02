@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
     /* learn this concept */
 }
 
@@ -518,7 +519,7 @@ nav span {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-
+    z-index: 1000;
 }
 
 /* Rotate msg icon */
@@ -722,7 +723,7 @@ nav span {
 .left :first-child {
     /* display: inline-flex; */
     justify-content: left;
-    color:rgb(158, 160, 171);
+    color: rgb(158, 160, 171);
     font-family: "Nunito Sans", sans-serif;
     font-size: 15px;
     font-weight: 600;
@@ -730,6 +731,7 @@ nav span {
     letter-spacing: 3px;
 
 }
+
 .left :nth-child(2) {
     /* display: inline-flex; */
     justify-content: left;
@@ -742,6 +744,7 @@ nav span {
     margin-bottom: 50px;
 
 }
+
 .left :nth-child(3) {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
@@ -750,10 +753,12 @@ nav span {
     color: rgb(158, 160, 171);
     margin-bottom: 50px;
 }
-.left :nth-child(4){
+
+.left :nth-child(4) {
     display: flex;
     align-items: center;
     gap: 30px;
+    width: max-content;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -761,7 +766,8 @@ nav span {
     letter-spacing: 3px;
     background-color: #00000000;
 }
-.left :nth-child(4) div div{
+
+.left :nth-child(4) div div {
     display: flex;
     margin: 0 auto;
     width: 70px;
@@ -769,8 +775,9 @@ nav span {
     border-radius: 50%;
     background-color: #1290DD;
 }
+
 .right {
-    
+
     width: max-content;
     display: flex;
     flex-direction: column;
@@ -784,54 +791,223 @@ nav span {
 }
 
 
-.cnt{
-    width: max-content;
-    background-color: #e67e22;
+
+
+.ripple-circle {
+    padding: 15px;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    /* background-color: #3498db; */
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
 }
-hr{
+
+/* Ripple */
+.ripple-circle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 3s infinite ease-in-out;
+    z-index: -1;
+}
+
+.circle svg {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(.5);
+        opacity: 1;
+        background-color: #ffffff;
+    }
+
+    30% {
+        transform: translate(-50%, -50%) scale(.7);
+        opacity: 0.8;
+    }
+
+    60% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.5;
+    }
+
+    85% {
+        transform: translate(-50%, -50%) scale(1.7);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0.1;
+    }
+}
+
+.left div:hover {
+    cursor: pointer;
+}
+
+.progressBar {
     border: none;
     margin-top: 5px;
     width: 100%;
     height: 4px;
     background-color: #46464a;
-}
-.ripple-circle {
-    padding: 15px;
-  position: relative;
-  width: 100px;
-  height: 100px;
-  /* background-color: #3498db; */
-  border-radius: 50%;
-  overflow: hidden;
-  z-index: 1;
+    /* dark gray base */
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
 }
 
-/* Ripple */
-.ripple-circle::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  animation: ripple 1.5s infinite ease-out;
-  z-index: -1;
+.line1, .line2 {
+    border: none;
+    height: 100%;
+    width: 0;
+    border-radius: 2px;
+    animation-fill-mode: forwards;
 }
 
-@keyframes ripple {
-  0% {
-    transform: translate(-50%, -50%) scale(0.5);
-    opacity: 0.5;
-  }
-  70% {
-    transform: translate(-50%, -50%) scale(2.5);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(3);
-    opacity: 0;
-  }
+.line1 {
+    background-color: #1290DD;
+    animation: lineIncrease1 2s ease-in-out forwards;
+}
+
+.line2 {
+    background-color: #65bf11;
+    animation: lineIncrease2 2s ease-in-out forwards;
+}
+.cnt1, .cnt2 {
+    width: max-content;
+    background-color: #e67e22;
+    display: inline-block;
+    /* position: absolute; */
+}
+.cnt1{
+    animation: moveRight1 2s ease-in-out forwards;
+}
+.cnt2{
+    animation: moveRight2 2s ease-in-out forwards;
+}
+@keyframes moveRight1 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(280px);
+    }
+
+}
+@keyframes moveRight2 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(250px);
+    }
+
+}
+@keyframes lineIncrease1 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 95%;
+    }
+}
+
+@keyframes lineIncrease2 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 85%;
+    }
+}
+
+
+
+/* Training & Certification */
+
+.training-certification {
+    position: relative;
+    top: 100px;
+    width: 100vw;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center children horizontally */
+    background-color: #1290DD;
+}
+
+.training-certification > .main-container {
+    max-width: 1200px;
+    width: 100%; /* Optional: Ensures responsiveness */
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.container-up{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    background-color: #65bf11;
+    gap: 20px;
+}
+
+.container-down{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    background-color: #d0e3bf;
+    
+}
+.box{
+    position: relative;
+    display: flex;
+    width:300px;
+    height: 300px;
+    background-color: #fff;
+    border: 2px solid rebeccapurple;
+    margin: 26px 0;
+}
+.coaching{
+    width: 560px;
+    height: 500px;
+    background-color: #ff7676;
+}
+
+.box > div{
+     position: absolute;
+     padding: 25px;
+     display: flex;
+     flex-direction: column;
+     gap: 2px;
+}
+.box>div >button{
+    
+}
+.frame{
+    width: 100%;
 }
