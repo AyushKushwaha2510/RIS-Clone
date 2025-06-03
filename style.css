@@ -960,7 +960,7 @@ nav span {
     justify-content: center;
     align-items: center;
     /* Center children horizontally */
-    /* /* background-color: #1290DD;  */
+    
 }
 
 .training-certification>.main-container {
@@ -968,7 +968,7 @@ nav span {
     width: 100%;
     /*Optional: Ensures responsiveness */
     height: 100%;
-    /* /* background-color: #fff;  */
+    
     display: flex;
     flex-direction: column;
 }
@@ -980,7 +980,7 @@ nav span {
     height: 50%;
     display: flex;
     flex-direction: row;
-    /* /* background-color: #65bf11;  */
+    
     gap: 20px;
 }
 
@@ -991,7 +991,7 @@ nav span {
     height: 50%;
     display: flex;
     flex-direction: row;
-    /* /* background-color: #d0e3bf;  */
+    
 
 }
 
