@@ -869,7 +869,8 @@ nav span {
     position: relative;
 }
 
-.line1, .line2 {
+.line1,
+.line2 {
     border: none;
     height: 100%;
     width: 0;
@@ -886,18 +887,23 @@ nav span {
     background-color: #65bf11;
     animation: lineIncrease2 2s ease-in-out forwards;
 }
-.cnt1, .cnt2 {
+
+.cnt1,
+.cnt2 {
     width: max-content;
     background-color: #e67e22;
     display: inline-block;
     /* position: absolute; */
 }
-.cnt1{
+
+.cnt1 {
     animation: moveRight1 2s ease-in-out forwards;
 }
-.cnt2{
+
+.cnt2 {
     animation: moveRight2 2s ease-in-out forwards;
 }
+
 @keyframes moveRight1 {
     from {
         transform: translateX(0);
@@ -908,6 +914,7 @@ nav span {
     }
 
 }
+
 @keyframes moveRight2 {
     from {
         transform: translateX(0);
@@ -918,6 +925,7 @@ nav span {
     }
 
 }
+
 @keyframes lineIncrease1 {
     from {
         width: 0;
@@ -950,64 +958,202 @@ nav span {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center children horizontally */
-    background-color: #1290DD;
+    align-items: center;
+    /* Center children horizontally */
+    /* /* background-color: #1290DD;  */
 }
 
-.training-certification > .main-container {
+.training-certification>.main-container {
     max-width: 1200px;
-    width: 100%; /* Optional: Ensures responsiveness */
+    width: 100%;
+    /*Optional: Ensures responsiveness */
     height: 100%;
-    background-color: #fff;
+    /* /* background-color: #fff;  */
     display: flex;
     flex-direction: column;
 }
-.container-up{
+
+.container-up {
     position: relative;
     top: 0;
     width: 100%;
     height: 50%;
     display: flex;
     flex-direction: row;
-    background-color: #65bf11;
+    /* /* background-color: #65bf11;  */
     gap: 20px;
 }
 
-.container-down{
+.container-down {
     position: relative;
     bottom: 0;
     width: 100%;
     height: 50%;
     display: flex;
     flex-direction: row;
-    background-color: #d0e3bf;
-    
-}
-.box{
-    position: relative;
-    display: flex;
-    width:300px;
-    height: 300px;
-    background-color: #fff;
-    border: 2px solid rebeccapurple;
-    margin: 26px 0;
-}
-.coaching{
-    width: 560px;
-    height: 500px;
-    background-color: #ff7676;
+    /* /* background-color: #d0e3bf;  */
+
 }
 
-.box > div{
-     position: absolute;
-     padding: 25px;
-     display: flex;
-     flex-direction: column;
-     gap: 2px;
+.training-certification .box {
+    position: relative;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    /* border: 2px solid rebeccapurple; */
+    margin: 26px 0;
+    gap: 10px;
 }
-.box>div >button{
-    
+
+.coaching {
+    width: 560px;
+    height: 376px;
+    /* background-color: #ff7676; */
 }
-.frame{
+
+.box>div {
+    position: absolute;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.frame {
     width: 100%;
+}
+
+.box>div>img {
+    width: 40px;
+    height: 40px;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    20% {
+        opacity: 0.3;
+    }
+
+    35% {
+        opacity: 0.1;
+    }
+
+    40% {
+        opacity: 0.01;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.1;
+    }
+
+    20% {
+        opacity: 0.2;
+    }
+
+    35% {
+        opacity: 0.3;
+    }
+
+    40% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    60% {
+        opacity: .88;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.box>div:hover {
+    animation: slideUp .7s ease-in-out forwards;
+    cursor: pointer;
+
+}
+.box > div hr{
+    border: none;
+    background-color: #7F8088;
+    width: 40px;
+    height: 2px;
+    /* transition: background-color 0.7s ease; */
+}
+.box > div:hover hr {
+    background-color: #1290DD;
+}
+
+.coaching h3 {
+    color: #121111;
+    font-size: 40px;
+}
+
+.coaching p {
+    color: #2d2a2a;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+/* On hover, hide the image and show the button */
+.box:hover div img {
+    animation: hide .7s ease-in-out forwards;
+}
+
+.box>div>button {
+    opacity: 0;
+    background-color: #128fdd00;
+    color: #1290DD;
+}
+
+.box:hover div button {
+    animation: show .7s ease-in-out forwards;
 }
